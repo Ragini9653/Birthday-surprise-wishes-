@@ -1,5 +1,21 @@
 > Akash:
-<!-- --- JAVASCRIPT CODE --- -->
+<div class="gallery" id="photoGallery">
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="Memory 1" onerror="this.src='https://unsplash.com'">
+                <div class="photo-caption">Crazy Memories 📸</div>
+            </div>
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="Memory 2" onerror="this.src='https://unsplash.com'">
+                <div class="photo-caption">Best Friends Forever 🌸</div>
+            </div>
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="Memory 3" onerror="this.src='https://unsplash.com'">
+                <div class="photo-caption">Smiling Always 😊</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- JAVASCRIPT CODE --- -->
     <script>
         // --- 1. TYPEWRITER EFFECT ---
         const words = [
@@ -26,29 +42,7 @@
             let typeSpeed = isDeleting ? 30 : 70;
 
             if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pause at full word
+                typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Pause before typing next
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-        // Start typewriter on load
-        document.addEventListener("DOMContentLoaded", () => type());
-
-
-        // --- 2. MUSIC PLAYER CONTROLLER ---
-        const music = document.getElementById("bgMusic");
-        const musicBtn = document.getElementById("musicBtn");
-
-        function toggleMusic() {
-            if (music.paused) {
-                music.play().then(() => {
-                    musicBtn.innerHTML = "⏸️ Pause Music";
-                }).catch(err => {
-                    console.log("Audio playback failed. Please interact with the page first.", err);
-                });
-            } else {
