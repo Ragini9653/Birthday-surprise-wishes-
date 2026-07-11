@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Ragini ❤️</title>
 
 <link rel="stylesheet" href="style.css">
@@ -19,17 +20,13 @@
 <h2>From Akash Parmar</h2>
 
 <p class="msg">
-
 I don't say this enough, but having you in my life means a lot.
-
+<br><br>
 May your smile always shine,
-
 your dreams come true,
-
-and every day bring happiness.
-
-❤️ Happy Birthday ❤️
-
+and every moment of your life be filled with happiness.
+<br><br>
+❤️ Happy Birthday My Love ❤️
 </p>
 
 <button onclick="playMusic()">
@@ -42,118 +39,27 @@ and every day bring happiness.
 
 <div class="gallery">
 
-<img src="photo1.jpg">
+<img src="photo1.jpg" alt="Photo 1">
 
-<img src="photo2.jpg">
-
-<img src="photo3.jpg">
+<img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3">
 
 </div>
 
-</div>
+<br><br>
 
-<script src="script.js"></script>
+<p style="color:white;font-size:22px;">
+✨ Forever Together ✨
+</p>
+
+<p style="color:white;font-size:18px;">
+Every smile of yours is special to me ❤️
+<br>
+May this birthday bring endless happiness, love and success into your life.
+<br><br>
+I will always pray for your happiness. 💖
+</p>
+
+</div><script src="script.js"></script>
 
 </body>
 </html>
-> Akash:
-body{
-    margin:0;
-    padding:0;
-    background:linear-gradient(135deg,#ff9ecf,#ffcce6);
-    font-family:Arial,sans-serif;
-    text-align:center;
-    overflow-x:hidden;
-}
-
-.container{
-    padding:20px;
-}
-
-h1{
-    color:white;
-    font-size:38px;
-    margin-top:20px;
-}
-
-h2{
-    color:white;
-    margin-bottom:20px;
-}
-
-.msg{
-    color:white;
-    font-size:20px;
-    line-height:1.8;
-    max-width:700px;
-    margin:auto;
-}
-
-button{
-    margin-top:25px;
-    padding:15px 35px;
-    border:none;
-    border-radius:30px;
-    background:white;
-    color:#ff1493;
-    font-size:18px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-button:hover{
-    transform:scale(1.08);
-}
-
-.gallery{
-    margin-top:40px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.gallery img{
-    width:250px;
-    height:320px;
-    object-fit:cover;
-    border-radius:20px;
-    border:6px solid white;
-    box-shadow:0 0 20px rgba(0,0,0,.25);
-    transition:.4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.06);
-}
-
-@keyframes float{
-    from{transform:translateY(0);}
-    to{transform:translateY(-15px);}
-}
-
-.gallery img{
-    animation:float 2s infinite alternate;
-}
-> Akash:
-function playMusic() {
-    const music = document.getElementById("music");
-    music.play();
-}
-
-const messages = [
-    "❤️ Happy Birthday My Dear ❤️",
-    "🎂 Wishing You Endless Happiness 🎂",
-    "🌹 You Make Every Moment Special 🌹",
-    "💖 Stay Happy Always 💖"
-];
-
-let index = 0;
-
-setInterval(() => {
-    document.querySelector(".msg").innerHTML = messages[index];
-    index++;
-    if (index >= messages.length) {
-        index = 0;
-    }
-}, 3000);
