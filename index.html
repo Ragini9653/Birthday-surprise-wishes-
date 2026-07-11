@@ -1,65 +1,54 @@
+> Akash:
+<!-- --- JAVASCRIPT CODE --- -->
+    <script>
+        // --- 1. TYPEWRITER EFFECT ---
+        const words = [
+            "To the world's most amazing best friends... 👭",
+            "Wishing you a year full of laughter and success! 🚀",
+            "May your bond stay beautiful and strong forever. 🌸",
+            "Let's celebrate this wonderful day together! 🎉"
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        function type() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
 
-<title>Happy Birthday Ragini ❤️</title>
+            let typeSpeed = isDeleting ? 30 : 70;
 
-<link rel="stylesheet" href="style.css">
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2000; // Pause at full word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; // Pause before typing next
+            }
 
-</head>
+            setTimeout(type, typeSpeed);
+        }
+        // Start typewriter on load
+        document.addEventListener("DOMContentLoaded", () => type());
 
-<body>
 
-<div class="container">
+        // --- 2. MUSIC PLAYER CONTROLLER ---
+        const music = document.getElementById("bgMusic");
+        const musicBtn = document.getElementById("musicBtn");
 
-<h1>🎂 Happy Birthday Ragini / Kajal ❤️</h1>
-
-<h2>From Akash Parmar</h2>
-
-<p class="msg">
-I don't say this enough, but having you in my life means a lot.
-<br><br>
-May your smile always shine,
-your dreams come true,
-and every moment of your life be filled with happiness.
-<br><br>
-❤️ Happy Birthday My Love ❤️
-</p>
-
-<button onclick="playMusic()">
-🎵 Play Music
-</button>
-
-<audio id="music">
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-
-<div class="gallery">
-
-<img src="photo1.jpg" alt="Photo 1">
-
-<img src="photo2.jpg" alt="Photo 2"><img src="photo3.jpg" alt="Photo 3">
-
-</div>
-
-<br><br>
-
-<p style="color:white;font-size:22px;">
-✨ Forever Together ✨
-</p>
-
-<p style="color:white;font-size:18px;">
-Every smile of yours is special to me ❤️
-<br>
-May this birthday bring endless happiness, love and success into your life.
-<br><br>
-I will always pray for your happiness. 💖
-</p>
-
-</div><script src="script.js"></script>
-
-</body>
-</html>
+        function toggleMusic() {
+            if (music.paused) {
+                music.play().then(() => {
+                    musicBtn.innerHTML = "⏸️ Pause Music";
+                }).catch(err => {
+                    console.log("Audio playback failed. Please interact with the page first.", err);
+                });
+            } else {
